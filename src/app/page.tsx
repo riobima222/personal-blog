@@ -153,10 +153,11 @@ export default function HomePage() {
             See all posts
           </Link>
         </div>
-        <div className="--CONTENT-- pt-10 min-h-[15em]">
+        <div className="--CONTENT-- pt-10 min-h-[15em] pb-6">
+          {/* WRITE 1 */}
           <Link
             href="/blog/why-should-switch-to-nextjs-app-router"
-            className="flex flex-col gap-2 group relative"
+            className="flex flex-col gap-2 group relative mb-4"
           >
             <div className="flex items-center gap-2">
               <span className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 transition duration-300">
@@ -178,6 +179,32 @@ export default function HomePage() {
               Hey fellow developers! , have you heard about App router in
               Next.js?, if not let's dive into why you should start checking out
               the cool feature
+            </p>
+          </Link>
+
+          {/* WRITE 2 */}
+          <Link
+            href="/blog/useRef-in-the-different-components"
+            className="flex flex-col gap-2 group relative"
+          >
+            <div className="flex items-center gap-2">
+              <span className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 transition duration-300">
+                {" "}
+                -{" "}
+              </span>
+              <span className="relative">
+                <span className="absolute inset-0 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 transition duration-300 opacity-0 group-hover:opacity-100"></span>
+                <span className="relative text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 transition duration-300 group-hover:text-white">
+                  How to use useRef in the different components in the next js
+                </span>
+              </span>
+            </div>
+            <span className="ps-4 text-xs">
+              <span className="text-slate-400">Category:</span> Next js
+            </span>
+            <p className="text-sm ps-4">
+              Using "useRef" in various components often happents when working
+              with next JS, which is it's components-based
             </p>
           </Link>
         </div>

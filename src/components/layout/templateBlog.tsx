@@ -4,7 +4,6 @@ import Navbar from "../navbar";
 import Footer from "../footer";
 import Subscribe from "../subscribe";
 import { useRef } from "react";
-import Modal from "../modal";
 
 const TemplateBlog = ({ children }: { children?: React.ReactNode }) => {
   const subscribeRef = useRef<HTMLDivElement>(null);
