@@ -5,7 +5,7 @@ import Footer from "../footer";
 import Subscribe from "../subscribe";
 import { useRef } from "react";
 
-const TemplateBlog = ({ children }: { children?: React.ReactNode }) => {
+const TemplateBlog = ({ children, arrow = "/blog" }: { children?: React.ReactNode, arrow?: string }) => {
   const subscribeRef = useRef<HTMLDivElement>(null);
   const inputSubscribe = useRef<HTMLDivElement>(null);
 
@@ -23,7 +23,7 @@ const TemplateBlog = ({ children }: { children?: React.ReactNode }) => {
   };
   return (
     <div className="max-w-[45em] mx-auto min-h-screen">
-      <Navbar onClick={ScrollToSubscribe} arrow="/blog" />
+      <Navbar onClick={ScrollToSubscribe} arrow={arrow} />
       <div className="mt-14">{children}</div>
       <Subscribe ref={subscribeRef} inputRef={inputSubscribe} />
       <Footer from="templateBlog" />

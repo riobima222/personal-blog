@@ -1,12 +1,91 @@
 import Image from "next/image";
 import { BorderBeam } from "@/components/magicui/border-beam";
 
+// MAGIC UI
+import { Dock, DockIcon } from "@/components/magicui/dock";
+export type IconProps = React.HTMLAttributes<SVGElement>;
+
 // ICONS
 import { FaInstagram } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
+import LetterPullup from "@/components/magicui/letterPullup";
+
+const Icons = {
+  html: () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="icon icon-tabler icons-tabler-outline icon-tabler-brand-html5"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z" />
+      <path d="M15.5 8h-7l.5 4h6l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5" />
+    </svg>
+  ),
+  tailwind: () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="icon icon-tabler icons-tabler-outline icon-tabler-brand-tailwind"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M11.667 6c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 2 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968zm-4 6.5c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 1.975 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968z" />
+    </svg>
+  ),
+  css: () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="icon icon-tabler icons-tabler-outline icon-tabler-brand-css3"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z" />
+      <path d="M8.5 8h7l-4.5 4h4l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5" />
+    </svg>
+  ),
+  nextjs: () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="icon icon-tabler icons-tabler-outline icon-tabler-brand-nextjs"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+      <path d="M15 12v-3" />
+    </svg>
+  ),
+};
 
 export default function HomePage() {
   return (
@@ -81,9 +160,63 @@ export default function HomePage() {
           about web development mostly about javascript framework and stuff.
           {"   "}
           {"  "}
-          <Link href="#" className="text-primary underline hover:no-underline">
+          <Link href="#" className="underline hover:no-underline text-blue-700">
             {"check my Portfolio"}
           </Link>
+        </div>
+      </div>
+
+      {/* LEARN TOGETHER */}
+      <div className="mt-20">
+        {/* <h2 className="text-center">LEARN TOGETHER</h2> */}
+        <LetterPullup words="LEARN TOGETHER" className="text-orange-400" />
+        <div className="--LEARN ANIMATIN-- relative">
+          <Dock direction="middle">
+            <DockIcon>
+              <Icons.html />
+            </DockIcon>
+            <DockIcon>
+              <Icons.css />
+            </DockIcon>
+            <DockIcon>
+              <Icons.tailwind />
+            </DockIcon>
+            <DockIcon>
+              <Icons.nextjs />
+            </DockIcon>
+          </Dock>
+        </div>
+        <div className="--LEARN CONTENT-- mt-4 flex justify-center">
+          <div className="flex flex-wrap gap-2 justify-center max-w-[35em] w-full">
+            <Link
+              href="#"
+              className="rounded-md border-[1px] border-white flex justify-center px-3 text-sm hover:bg-white hover:text-black hover:border-black transition-all duration-300"
+            >
+              <div className="--ICONS--"></div>
+              <span className="tracking-widest">html</span>
+            </Link>
+            <Link
+              href="#"
+              className="rounded-md border-[1px] border-white flex justify-center px-3 text-sm hover:bg-white hover:text-black hover:border-black transition-all duration-300"
+            >
+              <div className="--ICONS--"></div>
+              <span className="tracking-widest">css</span>
+            </Link>
+            <Link
+              href="#"
+              className="rounded-md border-[1px] border-white flex justify-center px-3 text-sm hover:bg-white hover:text-black hover:border-black transition-all duration-300"
+            >
+              <div className="--ICONS--"></div>
+              <span className="tracking-widest">tailwind</span>
+            </Link>
+            <Link
+              href="/learn/nextjs"
+              className="rounded-md border-[1px] border-white flex justify-center px-3 text-sm hover:bg-white hover:text-black hover:border-black transition-all duration-300"
+            >
+              <div className="--ICONS--"></div>
+              <span className="tracking-widest">nextjs</span>
+            </Link>
+          </div>
         </div>
       </div>
 

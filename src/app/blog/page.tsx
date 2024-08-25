@@ -108,7 +108,7 @@ const BlogPage = () => {
           ))
         ) : (
           <div className="--LOADING-- flex flex-col justify-center items-center gap-3">
-            <span className="loading loading-spinner loading-sm text-primary"></span>
+            <span className="loading loading-spinner text-info"></span>
             <span className="text-sm">Loading...</span>
           </div>
         )}
@@ -129,7 +129,7 @@ const BlogPage = () => {
             <div className="--IMAGE--relative w-[6em] flex flex-col justify-start sm:justify-start items-center mt-2">
               <div className="relative left-0 border-4 border-black rounded-full flex w-[5.5em] h-[5.5em] flex-col items-center justify-start overflow-hidden bg-background md:shadow-xl">
                 <Image
-                  src="/profile.jpg"
+                  src="/images/profile.jpg"
                   alt="profile"
                   width={200}
                   height={200}
